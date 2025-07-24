@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Orders - LiqReserve</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f0f2f5;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+      text-align: center;
+    }
+    th {
+      background-color: #007bff;
+      color: white;
+    }
+    tr:hover {
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>My Orders</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Order ID</th>
+        <th>Water Type</th>
+        <th>Quantity</th>
+        <th>Location</th>
+        <th>Status</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>#1001</td>
+        <td>Borewell</td>
+        <td>5000L</td>
+        <td>Coimbatore</td>
+        <td><span style="color:green;">Delivered</span></td>
+        <td>24 July 2025</td>
+      </tr>
+      <tr>
+        <td>#1002</td>
+        <td>Tanker</td>
+        <td>10000L</td>
+        <td>Chennai</td>
+        <td><span style="color:orange;">Pending</span></td>
+        <td>24 July 2025</td>
+      </tr>
+      <!-- You can add more dummy orders here -->
+    </tbody>
+  </table>
+
+</body>
+</html>

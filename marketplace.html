@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Marketplace - LiqReserve</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+</head>
+<body class="bg-gray-100 min-h-screen">
+
+  <!-- ✅ Responsive Navbar -->
+  <nav class="bg-white shadow-md p-4 flex flex-wrap justify-between items-center">
+    <div class="text-xl font-bold text-blue-700">LiqReserve</div>
+    <div class="space-x-4 mt-2 sm:mt-0">
+      <a href="index.html" class="text-blue-600 hover:underline">Home</a>
+      <a href="marketplace.html" class="text-blue-600 hover:underline font-semibold">Marketplace</a>
+      <a href="orders.html" class="text-blue-600 hover:underline">Orders</a>
+      <a href="search.html" class="text-blue-600 hover:underline">Search</a>
+      <a href="profile.html" class="text-blue-600 hover:underline">Profile</a>
+      <a href="login.html" class="bg-blue-600 text-white px-3 py-1 rounded">Login</a>
+    </div>
+  </nav>
+
+  <!-- ✅ Page Header -->
+  <div class="max-w-7xl mx-auto p-6">
+    <h1 class="text-3xl font-bold text-blue-700 mb-4">Water Marketplace</h1>
+    <p class="text-gray-600 mb-6">Browse available water listings and click "Buy Now" to proceed.</p>
+
+    <!-- ✅ Listings Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- 📦 Listing 1 -->
+      <div class="bg-white p-5 rounded shadow">
+        <h3 class="text-lg font-semibold">💧 10,000L Borewell - Chennai</h3>
+        <p class="text-gray-600">Delivery within 24 hrs</p>
+        <p class="text-green-700 font-semibold mt-1">₹1,500</p>
+        <button onclick="handleBuyClick()" class="mt-3 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 w-full">Buy Now</button>
+      </div>
+
+      <!-- 📦 Listing 2 -->
+      <div class="bg-white p-5 rounded shadow">
+        <h3 class="text-lg font-semibold">🚛 5,000L RO Water - Madurai</h3>
+        <p class="text-gray-600">TDS < 50 ppm, RO Certified</p>
+        <p class="text-green-700 font-semibold mt-1">₹950</p>
+        <button onclick="handleBuyClick()" class="mt-3 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 w-full">Buy Now</button>
+      </div>
+
+      <!-- 📦 Listing 3 -->
+      <div class="bg-white p-5 rounded shadow">
+        <h3 class="text-lg font-semibold">🌾 20,000L Agricultural Water - Trichy</h3>
+        <p class="text-gray-600">For irrigation use</p>
+        <p class="text-green-700 font-semibold mt-1">₹1,800</p>
+        <button onclick="handleBuyClick()" class="mt-3 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 w-full">Buy Now</button>
+      </div>
+
+      <!-- 📦 Listing 4 -->
+      <div class="bg-white p-5 rounded shadow">
+        <h3 class="text-lg font-semibold">💧 15,000L RO Water - Coimbatore</h3>
+        <p class="text-gray-600">Best for domestic use</p>
+        <p class="text-green-700 font-semibold mt-1">₹1,700</p>
+        <button onclick="handleBuyClick()" class="mt-3 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 w-full">Buy Now</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function handleBuyClick() {
+      const isLoggedIn = sessionStorage.getItem("loggedIn");
+      if (isLoggedIn) {
+        window.location.href = "orders.html";
+      } else {
+        window.location.href = "login.html";
+      }
+    }
+  </script>
+
+</body>
+</html>

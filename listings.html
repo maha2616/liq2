@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Create Listing</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      margin: 0;
+    }
+    .container {
+      padding: 16px;
+      max-width: 600px;
+      margin: auto;
+    }
+    h2 {
+      margin-bottom: 12px;
+    }
+    .section {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    label {
+      display: block;
+      margin-top: 12px;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+    textarea {
+      resize: vertical;
+    }
+    .icon-input {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .icon-input input {
+      flex: 1;
+    }
+    .submit-btn {
+      width: 100%;
+      padding: 12px;
+      background-color: #009688;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    .submit-btn:hover {
+      background-color: #00796b;
+    }
+    .note {
+      font-size: 13px;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>listings/create</h2>
+
+    <div class="section">
+      <h3>Basic Information</h3>
+      <label for="title">Listing Title</label>
+      <input type="text" id="title" placeholder="Enter a descriptive title"/>
+
+      <label for="description">Description</label>
+      <textarea id="description" placeholder="Describe your water listing" rows="4"></textarea>
+    </div>
+
+    <div class="section">
+      <h3>Pricing & Quantity</h3>
+
+      <label for="price">Price per Liter (INR)</label>
+      <div class="icon-input">
+        <span>₹</span>
+        <input type="number" id="price" placeholder="0.00" min="0" step="0.01"/>
+      </div>
+
+      <label for="quantity">Available Quantity (Liters)</label>
+      <div class="icon-input">
+        <span>💧</span>
+        <input type="number" id="quantity" placeholder="0" min="0" step="100"/>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Water Quality</h3>
+      <!-- You can add fields like pH, source, treatment type, etc. here -->
+      <label for="quality">Water Quality Description</label>
+      <textarea id="quality" placeholder="E.g., RO treated, suitable for irrigation, etc." rows="3"></textarea>
+    </div>
+
+    <button class="submit-btn" onclick="submitListing()">Submit Listing</button>
+    <p class="note">Your listing will be reviewed and published to the marketplace.</p>
+  </div>
+
+  <script>
+    function submitListing() {
+      const title = document.getElementById("title").value;
+      const description = document.getElementById("description").value;
+      const price = document.getElementById("price").value;
+      const quantity = document.getElementById("quantity").value;
+      const quality = document.getElementById("quality").value;
+
+      if (!title || !description || !price || !quantity) {
+        alert("Please fill in all required fields.");
+        return;
+      }
+
+      // For now, just log it
+      console.log({
+        title,
+        description,
+        price: parseFloat(price),
+        quantity: parseInt(quantity),
+        quality
+      });
+
+      alert("Listing submitted successfully!");
+      // Later: Push to Firebase or your backend
+    }
+  </script>
+</body>
+</html>

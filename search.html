@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Search Listings - LiqReserve</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      padding: 30px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .search-form {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+    .search-form select,
+    .search-form input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .results {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .card {
+      background-color: #fff;
+      padding: 20px;
+      width: 250px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
+    .card h3 {
+      margin: 0;
+    }
+    .card p {
+      color: #555;
+    }
+    .card button {
+      margin-top: 10px;
+      padding: 10px;
+      background-color: green;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .card button:hover {
+      background-color: darkgreen;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Search Listings</h1>
+
+  <div class="search-form">
+    <input type="text" placeholder="Enter City" />
+    <select>
+      <option value="">Select Type</option>
+      <option value="borewell">Borewell</option>
+      <option value="tanker">Tanker</option>
+    </select>
+    <input type="number" placeholder="Min Litres" />
+    <input type="number" placeholder="Max Litres" />
+    <button>Search</button>
+  </div>
+
+  <div class="results">
+    <div class="card">
+      <h3>10,000L Tanker</h3>
+      <p>Location: Chennai</p>
+      <p>Available within 24 hrs</p>
+      <button onclick="window.location.href='login.html'">Buy Now</button>
+    </div>
+
+    <div class="card">
+      <h3>5,000L Borewell</h3>
+      <p>Location: Coimbatore</p>
+      <p>Low TDS, Drinking quality</p>
+      <button onclick="window.location.href='login.html'">Buy Now</button>
+    </div>
+  </div>
+
+</body>
+</html>
